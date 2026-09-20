@@ -1,0 +1,17 @@
+{
+    "name": "halvinafarrassavitri/develop",
+    "authors": [
+        {
+            "name": "halvinafarras",
+            "email": "halvinaras@gmail.com"
+        }
+    ],
+    "require": {},
+    "config": {
+        "policy": {
+            "advisories": {
+                "block": false
+            }
+        }
+    }
+}
