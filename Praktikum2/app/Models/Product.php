@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -13,6 +12,21 @@ class Product extends Model
         'name',
         'unit',
         'price',
-        'stock',
+        'stock'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function transactionDetails()
+    {
+        return $this->hasMany(TransactionDetail::class);
+    }
+
+    public function getPriceAttribute($value)
+    {
+        return 'Rp' . number_format($value, 0, ',', '.');
+    }
 }
