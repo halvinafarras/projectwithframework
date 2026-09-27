@@ -25,6 +25,7 @@ class Product extends Model
         return $this->hasMany(TransactionDetail::class);
     }
 
+    // tugas 6
     public function getPriceAttribute($value)
     {
         return 'Rp' . number_format($value, 0, ',', '.');
