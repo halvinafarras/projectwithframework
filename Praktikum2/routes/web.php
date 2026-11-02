@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PosController;
 
 // Pertemuan 2
 Route::get('/', function () {
@@ -32,13 +33,15 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/reports/sales', [ReportController::class, 'sales'])->name('report.sales');
 });
 
+
 Route::middleware(['auth', 'role:admin,kasir'])->group(function () {
     Route::get('/pos', [PosController::class, 'index'])->name('pos.index');
     Route::post('/pos', [PosController::class, 'store'])->name('pos.store');
-
-    // Riwayat transaksi
-    Route::get('/pos/history', function () {})->name('pos.history');
+    Route::get('/pos/{transaction}/struk', [PosController::class, 'struk'])->name('pos.struk');
 });
+
+// Riwayat transaksi
+Route::get('/pos/history', function () {})->name('pos.history');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

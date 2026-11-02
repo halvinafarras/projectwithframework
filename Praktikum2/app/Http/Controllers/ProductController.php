@@ -13,7 +13,6 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-
     public function index(Request $request)
     {
         $query = Product::with('category');
@@ -70,8 +69,6 @@ class ProductController extends Controller
         return view('master-data.product.show', compact('product', 'totalTerjual', 'riwayat'));
     }
 
-
-
     /**
      * Show the form for editing the specified resource.
      */
@@ -81,8 +78,6 @@ class ProductController extends Controller
 
         return view('master-data.product.edit', compact('product', 'categories'));
     }
-
-
 
     /**
      * Update the specified resource in storage.
