@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 
 // Pertemuan 2
 Route::get('/', function () {
@@ -61,3 +63,5 @@ Route::get('/index', function () {
     ];
     return view('posts.index', compact('post'));
 });
+
+Route::resource('categories', CategoryController::class);

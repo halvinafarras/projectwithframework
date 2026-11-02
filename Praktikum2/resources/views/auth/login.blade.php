@@ -31,7 +31,7 @@
                 <input type="password" name="password"
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
             </div>
-            <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-md">
+            <button type="submit" class="w-full bg-pink-400 text-white py-2 rounded-md">
                 Masuk
             </button>
         </form>

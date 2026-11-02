@@ -12,7 +12,7 @@ class Product extends Model
         'name',
         'unit',
         'price',
-        'stock'
+        'stock',
     ];
 
     public function category()
@@ -26,8 +26,8 @@ class Product extends Model
     }
 
     // tugas 6
-    public function getPriceAttribute($value)
-    {
-        return 'Rp' . number_format($value, 0, ',', '.');
-    }
+    // public function getPriceAttribute($value)
+    // {
+    //     return 'Rp' . number_format($value, 0, ',', '.');
+    // }
 }
